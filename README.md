@@ -1,8 +1,8 @@
 # Objectif : Afficher des données sous forme de master / details
 
-> ⏰ Pensez à bien gérer votre **temps** (vous avez **1h** suite à laquelle vous devrez sans fautes commiter votre travail)
+> ⏰ Pensez à bien gérer votre **temps** (vous avez **1h** suite à laquelle vous devrez sans fautes rendre votre travail)
 
-> 💎 Le **fond**, la **forme** et la **qualité** l'emporteront sur la **quantité** et le **fonctionnel**
+> 💎 Le **fond**, la **forme** et la **qualité** l'emporteront sur le **fonctionnel** et la **quantité**
 
 -----
 
@@ -12,6 +12,14 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 - Rxjs
 - Angular reactive forms
 - Angular Material
+
+-----
+
+### 📦 Rendu
+
+Une fois le temps écoulé, vous devrez impérativement :
+- Packager votre exercice à l'aide de la commande <code>yarn bundle</code>
+- Envoyer par email le fichier <code>dist/ng-interview.git</code> à votre point de contact HUG
 
 -----
 
@@ -49,7 +57,7 @@ Vous devrez :
 }
 ```
 
-- Ajouter une propriété postsCount: number à tous les utilisateurs
+- Ajouter une propriété <code>postsCount: number</code> à tous les utilisateurs
 
 - Afficher uniquement les utilisateurs dont l'**identifiant** est supérieur ou égal à **5**
 

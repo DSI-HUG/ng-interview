@@ -9,6 +9,7 @@
     ],
     "scripts": {
         "ng": "ng",
+        "bundle": "git bundle create dist/ng-interview.git HEAD",
         "start": "ng serve",
         "build": "ng build",
         "test": "ng test",
