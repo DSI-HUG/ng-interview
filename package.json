@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "ng": "ng",
-        "bundle": "git bundle create dist/ng-interview.git HEAD",
+        "archive": "uploadStash=`git stash create`; git archive -o dist/ng-interview.zip ${uploadStash:-HEAD}",
         "start": "ng serve",
         "build": "ng build",
         "test": "ng test",

@@ -18,8 +18,8 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 ### 📦 Rendu
 
 Une fois le temps écoulé, vous devrez impérativement :
-- Packager votre exercice à l'aide de la commande <code>yarn bundle</code>
-- Envoyer par email le fichier <code>dist/ng-interview.git</code> à votre point de contact HUG
+- Archiver votre exercice à l'aide de la commande <code>yarn archive</code>
+- Envoyer par email le fichier <code>dist/ng-interview.zip</code> à votre point de contact HUG
 
 -----
 
