@@ -1,27 +1,77 @@
-# NgInterview
+# Objectif : Afficher des données sous forme de master / details
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+> ⏰ Pensez à bien gérer votre **temps** (vous avez **1h** suite à laquelle vous devrez sans fautes commiter votre travail)
 
-## Development server
+> 💎 Le **fond**, la **forme** et la **qualité** l'emporteront sur la **quantité** et le **fonctionnel**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-----
 
-## Code scaffolding
+### 🎉 Bonus
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus :
+- Rxjs
+- Angular reactive forms
+- Angular Material
 
-## Build
+-----
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 1. Partie « Master »
 
-## Running unit tests
+Dans cette partie vous allez devoir afficher une collection de données de type : **Utilisateur**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Les données seront disponible via les APIs suivantes :
+- https://jsonplaceholder.typicode.com/users
+- https://jsonplaceholder.typicode.com/posts?userId=:id
 
-## Running end-to-end tests
+Vous devrez :
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Afficher la liste des utilisateurs
+```ts
+// Un Utilisateur se présente sous cette forme :
+{
+    id: number
+    name: string
+    username: string
+    email: string
+    address: {
+        street: string
+        suite: string
+        city: string
+        zipcode: string
+    },
+    phone: string
+    website: string
+    company: {
+        name: string
+        catchPhrase: string
+        bs: string
+    }
+}
+```
 
-## Further help
+- Ajouter une propriété postsCount: number à tous les utilisateurs
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Afficher uniquement les utilisateurs dont l'**identifiant** est supérieur ou égal à **5**
+
+- Afficher uniquement le **nom** des utilisateurs et leur **nombre de posts** dans la liste
+
+-----
+
+## 2. Partie « Details »
+
+Dans cette partie vous allez devoir afficher le détail des utilisateurs.
+
+Vous devrez :
+
+- Afficher ces données sous forme de **formulaire**
+
+- Autoriser la modification de ces données :
+
+   - Les champs **name**, **email** et **adresse** sont obligatoires
+   - Le champ **email** doit avoir un format valide
+
+- Faire en sorte de pouvoir arriver directement sur le détail d'un utilisateur via **URL**
+
+🎉 Bonus :
+
+- Implémenter la partie **Création** d'un nouvel utilisateur

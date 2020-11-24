@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-const mdRawData = require('!raw-loader!./GETTING-STARTED.md');
+const readmeRawData = require('!raw-loader!README.md');
 
 @Component({
     selector: 'app-getting-started',
@@ -8,5 +8,5 @@ const mdRawData = require('!raw-loader!./GETTING-STARTED.md');
     styleUrls: ['./getting-started.component.scss']
 })
 export class GettingStartedComponent {
-    public data = mdRawData.default;
+    public data = readmeRawData.default;
 }
