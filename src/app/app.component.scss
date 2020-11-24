@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 64px;
+
+    mat-toolbar {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+    }
+}

@@ -1,0 +1,98 @@
+@import "~@angular/material/theming";
+
+@mixin elements-theme($theme) {
+    $accent: map-get($theme, accent);
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    a,
+    a:active,
+    a:focus,
+    a:visited {
+        color: mat-color($accent, A400);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    blockquote {
+        background: mat-color($primary, 300, 0.14);
+        border-left: 4px solid mat-color($accent);
+        border-radius: 4px;
+        color: soften-color(mat-color($foreground, base), 40%);
+        margin: 20px 0;
+        padding: 1px 20px;
+    }
+
+    code:not([class*="language-"]) {
+        background: mat-color($foreground, secondary-text, 0.07);
+        border-radius: 3px;
+        font-size: 0.94em;
+        padding: 0px 6px 2px;
+    }
+
+    hr {
+        border-color: mat-color($foreground, divider);
+        border-style: solid;
+        border-width: 1px 0 0 0;
+    }
+
+    table {
+        th {
+            color: mat-color($foreground, secondary-text);
+        }
+
+        td,
+        th {
+            border-bottom-color: mat-color($foreground, divider);
+        }
+    }
+}
+
+@mixin material-core() {
+    $font-family: "Google Sans", "Helvetica Neue", sans-serif;
+    $mat-typography: mat-typography-config($font-family);
+    body {
+        font-family: $font-family;
+    }
+    @include mat-core($mat-typography);
+}
+
+$primary: (
+    50: #d6ebff,
+    100: #8ac4ff,
+    200: #52a8ff,
+    300: #0a85ff,
+    400: #0075eb,
+    500: #0066cc,
+    600: #0057ad,
+    700: #00478f,
+    800: #003870,
+    900: #002952,
+    A100: #cce5ff,
+    A200: #66b2ff,
+    A400: #007fff,
+    A700: #0073e6,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $dark-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ),
+);
+
+$theme: mat-light-theme(mat-palette($primary), mat-palette($primary), mat-palette($mat-red));
+@include material-core();
+@include elements-theme($theme);
