@@ -18,7 +18,7 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 ### 📦 Rendu
 
 Une fois le temps écoulé, vous devrez impérativement :
-- Archiver votre exercice à l'aide de la commande <code>npm run archive</code>
+- Archiver votre exercice à l'aide de la commande <code>npm run archive</code> (ou faite un zip à la main en excluant le dossier node_modules)
 - Envoyer par email le fichier <code>dist/ng-interview.zip</code> à votre point de contact HUG
 
 -----
