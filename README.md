@@ -19,7 +19,7 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 
 Une fois le temps écoulé, vous devrez impérativement :
 - Archiver votre exercice à l'aide de la commande <code>npm run archive</code>
-- Envoyer par email le fichier <code>dist/ng-interview.zip</code> à votre point de contact HUG
+- Envoyer par email le fichier généré <code>dist/ng-interview.zip</code> à votre point de contact HUG
 *(en cas de problème, réalisez vous même un zip du projet en excluant le dossier node_modules)*
 
 -----
@@ -81,6 +81,10 @@ Vous devrez :
 
 - Faire en sorte de pouvoir arriver directement sur le détail d'un utilisateur via **URL**
 
-🎉 Bonus :
+-----
+
+## 3. Partie « Bonus »
+
+Si il vous reste un peu de temps, vous pourrez :
 
 - Implémenter la partie **Création** d'un nouvel utilisateur

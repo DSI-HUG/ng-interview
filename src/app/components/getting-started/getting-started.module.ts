@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, SecurityContext } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 import { MarkdownModule } from 'ngx-markdown';
 
@@ -15,9 +14,8 @@ import { GettingStartedComponent } from './getting-started.component';
     ],
     imports: [
         CommonModule,
-        HttpClientModule,
         MarkdownModule.forRoot({
-            loader: HttpClientModule
+            sanitize: SecurityContext.NONE
         })
     ]
 })

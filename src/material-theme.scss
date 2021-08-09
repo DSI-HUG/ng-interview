@@ -1,4 +1,4 @@
-@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
 
 @mixin elements-theme($theme) {
     $accent: map-get($theme, accent);
@@ -9,7 +9,7 @@
     a:active,
     a:focus,
     a:visited {
-        color: mat-color($accent, A400);
+        color: mat.get-color-from-palette($accent, A400);
         text-decoration: none;
     }
 
@@ -18,46 +18,46 @@
     }
 
     blockquote {
-        background: mat-color($primary, 300, 0.14);
-        border-left: 4px solid mat-color($accent);
+        background: mat.get-color-from-palette($primary, 300, 0.14);
+        border-left: 4px solid mat.get-color-from-palette($accent);
         border-radius: 4px;
-        color: soften-color(mat-color($foreground, base), 40%);
+        color: soften-color(mat.get-color-from-palette($foreground, base), 40%);
         margin: 20px 0;
         padding: 1px 20px;
     }
 
     code:not([class*="language-"]) {
-        background: mat-color($foreground, secondary-text, 0.07);
+        background: mat.get-color-from-palette($foreground, secondary-text, 0.07);
         border-radius: 3px;
         font-size: 0.94em;
         padding: 0px 6px 2px;
     }
 
     hr {
-        border-color: mat-color($foreground, divider);
+        border-color: mat.get-color-from-palette($foreground, divider);
         border-style: solid;
         border-width: 1px 0 0 0;
     }
 
     table {
         th {
-            color: mat-color($foreground, secondary-text);
+            color: mat.get-color-from-palette($foreground, secondary-text);
         }
 
         td,
         th {
-            border-bottom-color: mat-color($foreground, divider);
+            border-bottom-color: mat.get-color-from-palette($foreground, divider);
         }
     }
 }
 
 @mixin material-core() {
     $font-family: "Google Sans", "Helvetica Neue", sans-serif;
-    $mat-typography: mat-typography-config($font-family);
+    $mat-typography: mat.define-typography-config($font-family);
     body {
         font-family: $font-family;
     }
-    @include mat-core($mat-typography);
+    @include mat.core($mat-typography);
 }
 
 $primary: (
@@ -76,23 +76,27 @@ $primary: (
     A400: #007fff,
     A700: #0073e6,
     contrast: (
-        50: $dark-primary-text,
-        100: $dark-primary-text,
-        200: $dark-primary-text,
-        300: $light-primary-text,
-        400: $light-primary-text,
-        500: $light-primary-text,
-        600: $light-primary-text,
-        700: $light-primary-text,
-        800: $light-primary-text,
-        900: $light-primary-text,
-        A100: $dark-primary-text,
-        A200: $dark-primary-text,
-        A400: $light-primary-text,
-        A700: $light-primary-text,
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: rgba(black, 0.87),
+        A200: rgba(black, 0.87),
+        A400: white,
+        A700: white,
     ),
 );
 
-$theme: mat-light-theme(mat-palette($primary), mat-palette($primary), mat-palette($mat-red));
+$theme: mat.define-light-theme(
+    mat.define-palette($primary),
+    mat.define-palette($primary),
+    mat.define-palette(mat.$red-palette)
+);
 @include material-core();
 @include elements-theme($theme);
