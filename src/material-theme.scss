@@ -1,5 +1,71 @@
-@use "@angular/material" as mat;
 
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$palette: (
+    50: #d6ebff,
+    100: #8ac4ff,
+    200: #52a8ff,
+    300: #0a85ff,
+    400: #0075eb,
+    500: #0066cc,
+    600: #0057ad,
+    700: #00478f,
+    800: #003870,
+    900: #002952,
+    A100: #cce5ff,
+    A200: #66b2ff,
+    A400: #007fff,
+    A700: #0073e6,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: white,
+        400: white,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: rgba(black, 0.87),
+        A200: rgba(black, 0.87),
+        A400: white,
+        A700: white,
+    ),
+);
+$primary: mat.define-palette($palette);
+$accent: mat.define-palette($palette);
+
+// The warn palette is optional (defaults to red).
+$warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($theme);
+
+// Application themes
 @mixin elements-theme($theme) {
     $accent: map-get($theme, accent);
     $primary: map-get($theme, primary);
@@ -50,62 +116,13 @@
         }
     }
 }
-
-@mixin material-core() {
-    $font-family: "Google Sans", "Helvetica Neue", sans-serif;
-    $mat-typography: mat.define-legacy-typography-configmat.define-legacy-typography-config($font-family);
+@mixin app-theme() {
+    $font-family: "Roboto", "Helvetica Neue", sans-serif;
+    $mat-typography: mat.define-legacy-typography-config($font-family);
     body {
         font-family: $font-family;
     }
-    // TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
-//  The following line adds:
-//    1. Default typography styles for all components
-//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
-//  If you specify typography styles for the components you use elsewhere, you should delete this line.
-//  If you don't need the default component typographies but still want the hierarchy styles,
-//  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy($mat-typography);`
-@include mat.all-legacy-component-typographies($mat-typography);
-@include mat.legacy-core();
 }
 
-$primary: (
-    50: #d6ebff,
-    100: #8ac4ff,
-    200: #52a8ff,
-    300: #0a85ff,
-    400: #0075eb,
-    500: #0066cc,
-    600: #0057ad,
-    700: #00478f,
-    800: #003870,
-    900: #002952,
-    A100: #cce5ff,
-    A200: #66b2ff,
-    A400: #007fff,
-    A700: #0073e6,
-    contrast: (
-        50: rgba(black, 0.87),
-        100: rgba(black, 0.87),
-        200: rgba(black, 0.87),
-        300: white,
-        400: white,
-        500: white,
-        600: white,
-        700: white,
-        800: white,
-        900: white,
-        A100: rgba(black, 0.87),
-        A200: rgba(black, 0.87),
-        A400: white,
-        A700: white,
-    ),
-);
-
-$theme: mat.define-light-theme(
-    mat.define-palette($primary),
-    mat.define-palette($primary),
-    mat.define-palette(mat.$red-palette)
-);
-@include material-core();
+@include app-theme();
 @include elements-theme($theme);
