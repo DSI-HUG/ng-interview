@@ -9,11 +9,11 @@
     ],
     "scripts": {
         "ng": "ng",
-        "ncu": "npx ncu -i --format=group",
+        "ncu": "npx npm-check-updates -i --format=group",
         "archive": "node archive.js",
         "start": "ng serve",
         "build": "ng build",
-	    "watch": "ng build --watch --configuration development",
+        "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
     "private": true,
