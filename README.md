@@ -88,3 +88,11 @@ Vous devrez :
 Si il vous reste un peu de temps, vous pourrez :
 
 - Implémenter la partie **Création** d'un nouvel utilisateur
+
+-----
+
+## Credits
+
+Copyright (C) 2021 [HUG - Hôpitaux Universitaires Genève][dsi-hug]
+
+[![love@hug](https://img.shields.io/badge/@hug-%E2%9D%A4%EF%B8%8Flove-magenta)][dsi-hug]
