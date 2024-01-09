@@ -26,6 +26,8 @@ Dans le cas où il vous aurait été demandé de transmettre votre exercice par 
 
 ### 🚧 Réalisation
 
+Après avoir récupéré ce projet, voici les tâches que vous aurez a réaliser :
+
 ## 1. Partie « Master »
 
 Dans cette partie vous allez devoir afficher une collection de données de type : **Utilisateur**.
