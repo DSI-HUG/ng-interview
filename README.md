@@ -1,8 +1,8 @@
-# Objectif : Afficher des données sous forme de master / details
+# Objectif : afficher des données sous forme de master / details
 
-> ⏰ Pensez à bien gérer votre **temps** (vous avez **1h** suite à laquelle vous devrez sans fautes rendre votre travail)
+⏰ Pensez à bien gérer votre **temps** (vous n'avez que **1h**)
 
-> ⚠️ Le **fond**, la **forme** et la **qualité** l'emporteront sur le **fonctionnel** et la **quantité**
+⚠️ Le **fond**, la **forme** et la **qualité** l'emporteront sur le **fonctionnel** et la **quantité**
 
 -----
 
@@ -17,52 +17,54 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 
 ### 📦 Rendu
 
-Une fois le temps écoulé, vous devrez impérativement :
+Dans le cas où il vous aurait été demandé de transmettre votre exercice par email, vous devrez :
 - Archiver votre exercice à l'aide de la commande <code>npm run archive</code>
 - Envoyer par email le fichier généré <code>dist/ng-interview.zip</code> à votre point de contact HUG
 *(en cas de problème, réalisez vous même un zip du projet en excluant le dossier node_modules)*
 
 -----
 
+### 🚧 Réalisation
+
 ## 1. Partie « Master »
 
-Dans cette partie vous allez devoir afficher une collection de données de type : **Utilisateur**
+Dans cette partie vous allez devoir afficher une collection de données de type : **Utilisateur**.
 
-Les données seront disponible via les APIs suivantes :
+Les données dont vous aurez besoin, seront disponible via les APIs suivantes :
 - https://jsonplaceholder.typicode.com/users
 - https://jsonplaceholder.typicode.com/posts?userId=:id
 
-Vous devrez :
+**Vous devrez :**
 
 - Afficher la liste des utilisateurs
-```ts
-// Un Utilisateur se présente sous cette forme :
-{
-    id: number
-    name: string
-    username: string
-    email: string
-    address: {
-        street: string
-        suite: string
-        city: string
-        zipcode: string
-    },
-    phone: string
-    website: string
-    company: {
+    ```ts
+    // Un Utilisateur se présente sous cette forme :
+    {
+        id: number
         name: string
-        catchPhrase: string
-        bs: string
+        username: string
+        email: string
+        address: {
+            street: string
+            suite: string
+            city: string
+            zipcode: string
+        },
+        phone: string
+        website: string
+        company: {
+            name: string
+            catchPhrase: string
+            bs: string
+        }
     }
-}
-```
+    ```
 
-- Ajouter une propriété <code>postsCount: number</code> à tous les utilisateurs
+- Ajouter et initialiser une propriété <code>postsCount: number</code> à tous les utilisateurs
 
 - Afficher uniquement les utilisateurs dont l'**identifiant** est supérieur ou égal à **5**
 
-- Afficher uniquement le **nom** des utilisateurs et leur **nombre de posts** dans la liste
+- Afficher uniquement le **nom** des utilisateurs et leur **nombre de posts**
 
 -----
 
@@ -70,16 +72,16 @@ Vous devrez :
 
 Dans cette partie vous allez devoir afficher le détail des utilisateurs.
 
-Vous devrez :
+**Vous devrez**, lors de la sélection d'un utilisateur :
 
-- Afficher ces données sous forme de **formulaire**
+- Afficher ses données personnelles sous forme de **formulaire**
 
-- Autoriser la modification de ces données :
+- Autoriser la **modification** de ses données :
 
-   - Les champs **name**, **email** et **adresse** sont obligatoires
-   - Le champ **email** doit avoir un format valide
+   - Les champs `name`, `email` et `adresse` devront être obligatoires
+   - Le champ `email` devra avoir un format valide
 
-- Faire en sorte de pouvoir arriver directement sur le détail d'un utilisateur via **URL**
+- Faire en sorte de pouvoir arriver directement sur le détail d'un utilisateur via une **URL**
 
 -----
 
