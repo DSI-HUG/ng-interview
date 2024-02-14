@@ -19,7 +19,7 @@ L'utilisation des techniques suivantes n'est pas obligatoire mais serait un plus
 
 Dans le cas où il vous aurait été demandé de transmettre votre exercice par email, vous devrez :
 - Archiver votre exercice à l'aide de la commande <code>npm run archive</code>
-- Envoyer par email le fichier généré <code>dist/ng-interview.zip</code> à votre point de contact HUG
+- Envoyer par email le fichier généré <code>dist/ng-interview.zip</code> à votre point de contact HUG<br>
 *(en cas de problème, réalisez vous même un zip du projet en excluant le dossier node_modules)*
 
 -----
